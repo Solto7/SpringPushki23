@@ -1,4 +1,4 @@
 package git;
 
-public class QiwiPayment {
+class QiwiPayment {
 }
