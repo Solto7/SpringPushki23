@@ -1,4 +1,4 @@
 package git;
 
-public class Amazon {
+public class AmazonCom {
 }
