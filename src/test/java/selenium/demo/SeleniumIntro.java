@@ -14,7 +14,7 @@ import java.time.Duration;
 public class SeleniumIntro {
 
     @Test
-            public void textBoxTest(){
+    public void textBoxTest() {
 
         WebDriverManager.chromedriver().setup(); // setup Chrome driver Binary
         WebDriver driver = new ChromeDriver(); //  // Object Drivers
@@ -28,29 +28,28 @@ public class SeleniumIntro {
         WebElement userEmail = driver.findElement(By.id("userEmail"));
         userEmail.sendKeys("james.bond@gmail.com");
 
-        WebElement currentAdress = driver.findElement(By.id("currentAdress"));
-        currentAdress.sendKeys("Wall Street 221");
+        WebElement currentAddress = driver.findElement(By.id("currentAddress"));
+        currentAddress.sendKeys("Wall Street 221");
 
-        WebElement permanetAdress = driver.findElement(By.id("permanetAdress"));
-        permanetAdress.sendKeys("Trump Tower");
-
-        WebElement submitBth = driver.findElement(By.id("submit"));
-        submitBth.click();
+        WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
+        permanentAddress.sendKeys("Trump Tower");
 
         WebElement submitBtn = driver.findElement(By.id("submit"));
         WebElementActions.scrollToElement(driver, submitBtn);
         submitBtn.click();
 
         WebElement resultEmail = driver.findElement(By.id("email"));
-        Assert.assertTrue(resultEmail.getText().contains("James.bond@gmail.com"));
+        Assert.assertTrue(resultEmail.getText().contains("james.bond@gmail.com"));
         WebElement resultName = driver.findElement(By.id("name"));
         Assert.assertTrue(resultName.getText().contains("James Bond"));
 
         WebElement resultCurrentAdrress = driver.findElement(By.xpath("//p[@id='currentAddress']"));
         Assert.assertTrue(resultCurrentAdrress.getText().contains("Wall Street 221"));
 
-        WebElement resultPermanentAdress  = driver.findElement(By.xpath("//p[@id='permanentAddress']\n"));
+        WebElement resultPermanentAdress = driver.findElement(By.xpath("//p[@id='permanentAddress']\n"));
         Assert.assertTrue(resultPermanentAdress.getText().contains("Trump Tower"));
+
+        driver.quit();
 
     }
 }
