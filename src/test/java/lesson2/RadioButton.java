@@ -10,7 +10,7 @@ public class RadioButton extends BaseTest{
     @Test
     void radioButtonTest(){
         driver.get("https://demoqa.com/radio-button");
-        WebElement yesRadioBtn = driver.findElement(By.id("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[2]/label"));
+        WebElement yesRadioBtn = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[2]/label"));
         yesRadioBtn.click();
         WebElement yesResult = driver.findElement(By.tagName("p"));
         Assert.assertTrue(yesResult.getText().contains("You have selected Yes"));
