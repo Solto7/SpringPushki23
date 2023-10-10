@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import selenium.WebElementActions;
 
 import java.time.Duration;
 
@@ -35,7 +34,7 @@ public class SeleniumIntro {
         permanentAddress.sendKeys("Trump Tower");
 
         WebElement submitBtn = driver.findElement(By.id("submit"));
-        WebElementActions.scrollToElement(driver, submitBtn);
+//        WebElementActions.scrollToElement(driver, submitBtn);
         submitBtn.click();
 
         WebElement resultEmail = driver.findElement(By.id("email"));
